@@ -21,10 +21,5 @@ class ViewController: UIViewController, MKMapViewDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    func processJsonData() {
-        
-        let url = NSURL
-    }
-
 }
 

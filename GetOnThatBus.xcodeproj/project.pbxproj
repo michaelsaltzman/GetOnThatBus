@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C6D4C0E21C6153390087816B /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4C0E11C6153390087816B /* MapModel.swift */; };
+		C6D4C0E71C61551D0087816B /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4C0E61C61551D0087816B /* Stop.swift */; };
 		FEB2C47B1C6146EE00F0A996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB2C47A1C6146EE00F0A996 /* AppDelegate.swift */; };
 		FEB2C47D1C6146EE00F0A996 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB2C47C1C6146EE00F0A996 /* ViewController.swift */; };
 		FEB2C4801C6146EE00F0A996 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEB2C47E1C6146EE00F0A996 /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C6D4C0E11C6153390087816B /* MapModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
+		C6D4C0E61C61551D0087816B /* Stop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
 		FEB2C4771C6146EE00F0A996 /* GetOnThatBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetOnThatBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEB2C47A1C6146EE00F0A996 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEB2C47C1C6146EE00F0A996 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,11 +44,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C6D4C0E31C6153690087816B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C6D4C0E11C6153390087816B /* MapModel.swift */,
+				C6D4C0E61C61551D0087816B /* Stop.swift */,
+			);
+			name = Model;
+			path = GetOnThatBus;
+			sourceTree = "<group>";
+		};
+		C6D4C0E41C6153720087816B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FEB2C47E1C6146EE00F0A996 /* Main.storyboard */,
+				FEB2C4861C6146EE00F0A996 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			path = GetOnThatBus;
+			sourceTree = "<group>";
+		};
+		C6D4C0E51C61537C0087816B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FEB2C47C1C6146EE00F0A996 /* ViewController.swift */,
+			);
+			name = Controller;
+			path = GetOnThatBus;
+			sourceTree = "<group>";
+		};
 		FEB2C46E1C6146EE00F0A996 = {
 			isa = PBXGroup;
 			children = (
 				FEB2C48F1C61473400F0A996 /* MapKit.framework */,
 				FEB2C4791C6146EE00F0A996 /* GetOnThatBus */,
+				C6D4C0E31C6153690087816B /* Model */,
+				C6D4C0E41C6153720087816B /* View */,
+				C6D4C0E51C61537C0087816B /* Controller */,
 				FEB2C4781C6146EE00F0A996 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,10 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				FEB2C47A1C6146EE00F0A996 /* AppDelegate.swift */,
-				FEB2C47C1C6146EE00F0A996 /* ViewController.swift */,
-				FEB2C47E1C6146EE00F0A996 /* Main.storyboard */,
 				FEB2C4841C6146EE00F0A996 /* Assets.xcassets */,
-				FEB2C4861C6146EE00F0A996 /* LaunchScreen.storyboard */,
 				FEB2C4891C6146EE00F0A996 /* Info.plist */,
 				FEB2C4811C6146EE00F0A996 /* GetOnThatBus.xcdatamodeld */,
 			);
@@ -143,7 +176,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6D4C0E21C6153390087816B /* MapModel.swift in Sources */,
 				FEB2C47D1C6146EE00F0A996 /* ViewController.swift in Sources */,
+				C6D4C0E71C61551D0087816B /* Stop.swift in Sources */,
 				FEB2C47B1C6146EE00F0A996 /* AppDelegate.swift in Sources */,
 				FEB2C4831C6146EE00F0A996 /* GetOnThatBus.xcdatamodeld in Sources */,
 			);
@@ -293,6 +328,7 @@
 				FEB2C48E1C6146EE00F0A996 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
