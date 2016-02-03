@@ -7,15 +7,16 @@
 //
 
 import Foundation
+import MapKit
 
-class Stop {
-    let name: String
-    let longitude: Double
-    let latitude: Double
+class Stop: NSObject, MKAnnotation {
+    var title: String?
+    var coordinate: CLLocationCoordinate2D
+    var info: String
     
-    init (name:String, longitude:Double, latitude:Double) {
-        self.name = name
-        self.longitude = longitude
-        self.latitude = latitude
+    init (name:String, longitude:Double, latitude:Double, info:String) {
+        self.title = name
+        self.coordinate = CLLocationCoordinate2DMake(latitude, longitude)
+        self.info = info 
     }
 }

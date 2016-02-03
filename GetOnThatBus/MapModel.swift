@@ -22,7 +22,8 @@ class MapModel {
             let name = stop["cta_stop_name"] as! String
             let latitude = stop["latitude"] as! String
             let longitude = stop["longitude"] as! String
-            let stop = Stop(name: name, longitude: Double(latitude)!, latitude: Double(longitude)!)
+            let info = stop["_position"] as! String
+            let stop = Stop(name: name, longitude: Double(longitude)!, latitude: Double(latitude)!, info:info)
             
             stops.append(stop)
         }
