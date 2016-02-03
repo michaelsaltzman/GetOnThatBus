@@ -9,14 +9,14 @@
 import Foundation
 
 class MapModel {
-        
+    
     let urlString = "https://s3.amazonaws.com/mmios8week/bus.json"
     
     func loadStops () -> [Stop] {
-    
-    var stops = [Stop]()
-    let jsonDictionary = fetchJSON(urlString)
-    let stopsFromJSON = jsonDictionary!["row"] as! [NSDictionary]
+        
+        var stops = [Stop]()
+        let jsonDictionary = fetchJSON(urlString)
+        let stopsFromJSON = jsonDictionary!["row"] as! [NSDictionary]
         
         for stop in stopsFromJSON {
             let name = stop["cta_stop_name"] as! String
@@ -28,18 +28,18 @@ class MapModel {
             stops.append(stop)
         }
         
-    return stops
+        return stops
     }
-//    var meetUps = [MeetUp]()
-//    
-//    for event in results {
-//        let eventName = event["name"] as! String
-//        let eventAddress: String
-//        if let venue = event["venue"] {
-//            eventAddress = venue["address_1"] as! String
-//        } else {
-//            eventAddress = "No address"
-//        }
+    //    var meetUps = [MeetUp]()
+    //
+    //    for event in results {
+    //        let eventName = event["name"] as! String
+    //        let eventAddress: String
+    //        if let venue = event["venue"] {
+    //            eventAddress = venue["address_1"] as! String
+    //        } else {
+    //            eventAddress = "No address"
+    //        }
     
     
     

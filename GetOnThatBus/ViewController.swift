@@ -20,16 +20,27 @@ class ViewController: UIViewController, MKMapViewDelegate {
         mapViewThatWorks.delegate = self
         
         let mapModel = MapModel()
-        let array = mapModel.loadStops()
-        populateMapWithAnnotations(array)
+        let stopsArray = mapModel.loadStops()
+        populateMapWithAnnotations(stopsArray)
+        setRegion(stopsArray)
         
     }
     
-    func populateMapWithAnnotations(array : NSArray) {
-        for stop in array {
+    func populateMapWithAnnotations(stopsArray : NSArray) {
+        for stop in stopsArray {
             let aStop = stop as! Stop
             mapViewThatWorks.addAnnotation(aStop)
         }
+    }
+    
+    
+    func setRegion (stopsArray: [Stop]) -> () {
+//        let averageLatitude = (stopsArray.reduce(0) {$0 + $1.latitude}) / Double(stopsArray.count)
+//        let averageLongitude = (stopsArray.reduce(0) {$0 + $1.longitude}) / Double(stopsArray.count)
+
+        let centerCoordiante = CLLocationCoordinate2DMake(stopsArray[0].latitude, stopsArray[0].longitude)
+        let span = MKCoordinateSpanMake(1, 1)
+        self.mapViewThatWorks.setRegion(MKCoordinateRegion(center: centerCoordiante, span: span), animated: true)
     }
 }
     
