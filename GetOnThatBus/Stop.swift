@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Stop{
+class Stop {
     let name: String
     let longitude: Double
     let latitude: Double

@@ -9,23 +9,25 @@
 import Foundation
 
 class MapModel {
-    
+        
     let urlString = "https://s3.amazonaws.com/mmios8week/bus.json"
     
     func loadStops () -> [Stop] {
     
-    let stops = [Stop]()
+    var stops = [Stop]()
     let jsonDictionary = fetchJSON(urlString)
-    
-    let stopsFromJSON = jsonDictionary!["row"] as! [NSArray]
+    let stopsFromJSON = jsonDictionary!["row"] as! [NSDictionary]
         
         for stop in stopsFromJSON {
-            // assign items from json to local variables
-            // pass local variables into Stop init function 
-            // append Stop to stops array            
+            let name = stop["cta_stop_name"] as! String
+            let latitude = stop["latitude"] as! String
+            let longitude = stop["longitude"] as! String
+            let stop = Stop(name: name, longitude: Double(latitude)!, latitude: Double(longitude)!)
+            
+            stops.append(stop)
         }
         
-    return [Stop()]
+    return stops
     }
 //    var meetUps = [MeetUp]()
 //    
@@ -41,7 +43,7 @@ class MapModel {
     
     
     // load json data
-    func fetchJSON(urlString: String) -> NSDictionary? {
+    private func fetchJSON(urlString: String) -> NSDictionary? {
         guard let jsonData = getJSON(urlString), let jsonDictionary = parseJSON(jsonData) else {
             return nil
         }
